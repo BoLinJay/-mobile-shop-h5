@@ -1,0 +1,146 @@
+.root {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .topbar {
+        position: relative;
+        padding-top: 8.93vw;
+        padding-bottom: 3.47vw;
+        width: 100%;
+        text-align: center;
+        font-size: 4.8vw;
+        font-weight: 100;
+        color: #333333;
+        background-color: #fbfbfb;
+
+        img {
+            position: absolute;
+            bottom: 3.6vw;
+            left: 2.8vw;
+            width: 3.67vw;
+        }
+    }
+
+    .search {
+        display: flex;
+        justify-content: space-between;
+
+        .input {
+            display: inline-block;
+            width: 80.8vw;
+            height: 8.93vw;
+            border-radius: 2vw;
+            background-color: #f4f8f7;
+            border: 0;
+            padding-left: 3.33vw;
+        }
+
+        .button {
+            display: inline-block;
+            margin-left: 3.33vw;
+            width: 10.4vw;
+            height: 8.93vw;
+            background-color: #c55a5c;
+            border-radius: 1vw;
+            text-align: center;
+            padding-top: 2.4vw;
+
+            img {
+                width: 5.13vw;
+            }
+        }
+    }
+
+    .normal {
+        margin-top: 3.73vw;
+        height: 56.53vw;
+        width: 100%;
+        text-align: center;
+        background-color: #efefef;
+
+        img {
+            padding-top: 8.8vw;
+            width: 20.53vw;
+        }
+
+        .text {
+            margin-top: 5.47vw;
+            font-size: 3.47vw;
+            color: #000000;
+            opacity: 0.56;
+        }
+    }
+
+    .like {
+        position: relative;
+        margin-bottom: 3.47vw;
+        height: 12.13vw;
+        text-align: center;
+        line-height: 12.13vw;
+        font-size: 3.47vw;
+        letter-spacing: .17vw; //文字间距
+        color: #555555;
+
+        .border {
+            position: absolute;
+            top: 8.8vw;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 1.73vw;
+            width: 10.67vw;
+            height: .13vw;
+            background-color: #c55a5c;
+        }
+    }
+
+    .content {
+        padding: 0 4.27vw 0 3.47vw;
+
+        li {
+            display: flex;
+            margin-bottom: 4.8vw;
+            height: 24.00vw;
+
+            img {
+                margin-right: 3.47vw;
+            }
+
+            .content_right {
+                width: 59.47vw;
+
+                .title {
+                    display: -webkit-box; //需要显示时文本行数
+                    -webkit-box-orient: vertical; //需要显示时文本行数
+                    -webkit-line-clamp: 2; //需要显示时文本行数
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    font-size: 3.47vw;
+                    color: #555555;
+                }
+
+                .text {
+                    overflow: hidden;
+                    white-space: nowrap; //单行文本显示
+                    text-overflow: ellipsis;
+                    margin: 2.87vw 0 3.30vw 0;
+                    font-size: 2.67vw;
+                    color: #999999;
+                }
+
+                .money {
+                    margin-bottom: 1.27vw;
+                    font-size: 2.4vw;
+                    color: #c55a5c;
+                }
+
+                .border {
+                    width: 100%;
+                    height: .13vw;
+                    background-color: #6e6e6e;
+                    opacity: .2;
+                }
+            }
+        }
+    }
+}

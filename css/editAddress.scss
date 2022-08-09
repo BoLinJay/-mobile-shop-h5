@@ -1,0 +1,118 @@
+.root {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #f4f8f7;
+
+    .topbar {
+        position: relative;
+        padding-top: 8.93vw;
+        padding-bottom: 3.47vw;
+        width: 100%;
+        text-align: center;
+        font-size: 4.8vw;
+        font-weight: 100;
+        color: #333333;
+        border-bottom: .13vw solid #b7b7b7;
+        background-color: #fff;
+
+        img {
+            position: absolute;
+            bottom: 3.6vw;
+            left: 2.8vw;
+            width: 3.67vw;
+        }
+    }
+
+    .content {
+        font-size: 3.73vw;
+        background-color: #fff;
+
+        .component {
+            display: inline-block;
+            position: relative;
+            width: 100%;
+            height: 11.2vw;
+            border-bottom: .13vw solid #dddddd;
+        }
+
+        .title {
+            position: absolute;
+            top: 50%;
+            left: 2.8vw;
+            transform: translateY(-50%);
+            color: #666666;
+        }
+
+        .input {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            padding-left: 26.67vw;
+            border: 0;
+        }
+
+        .option {
+            display: inline-block;
+            position: relative;
+            height: 19.73vw;
+            border-bottom: .13vw solid #dddddd;
+
+            .select {
+                display: flex;
+                flex-wrap: wrap;
+                align-content: space-between;
+                padding: 2.27vw 0;
+                height: 100%;
+                margin-left: 26.67vw;
+
+                select {
+                    margin-right: 9.07vw;
+                    width: 30.8vw;
+                    height: 6.13vw;
+                    border: .13vw solid #dddddd;
+
+                    &:nth-child(2n) {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+
+        .minute {
+            height: 22.67vw;
+            display: inline-block;
+            position: relative;
+            width: 100%;
+            border-bottom: .13vw solid #dddddd;
+        }
+
+        .textarea {
+            padding-top: 3.33vw;
+            padding-bottom: 3.33vw;
+        }
+
+        .default {
+            .choose {
+                position: absolute;
+                top: 50%;
+                right: 2.8vw;
+                transform: translateY(-50%);
+                width: 4vw;
+            }
+        }
+    }
+
+    .submit {
+        margin-top: 58.67vw;
+        width: 94.4vw;
+        background-color: #c55a5c;
+        border-radius: 1.33vw;
+        text-align: center;
+        line-height: 9.73vw;
+        font-size: 3.73vw;
+        font-weight: 100;
+        color: #ffffff;
+        border: none;
+    }
+}

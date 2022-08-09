@@ -1,0 +1,112 @@
+.root {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: #777777;
+
+    .logo {
+        margin-top: 22.8vw;
+
+        img {
+            width: 16vw;
+            height: 16.67vw;
+        }
+    }
+
+    .formData {
+        padding: 0 5.33vw;
+        margin-top: 17.47vw;
+
+        &_account,
+        &_password,
+        &_repeat,
+        &_code {
+            width: 89.33vw;
+            height: 10.67vw;
+            border: .13vw solid #b7b7b7;
+            padding-left: 2.8vw;
+
+        }
+
+        &_password,
+        &_repeat {
+            margin-top: 4.13vw;
+        }
+
+        &_gender {
+            display: flex;
+            align-items: center;
+            margin-top: 5.07vw;
+
+            &_boy {
+                margin-right: 3.33vw;
+                margin-left: 3.2vw;
+            }
+
+            &_girl {
+                margin-left: 11.47vw;
+                margin-right: 3.33vw;
+            }
+        }
+
+        &_phone {
+            position: relative;
+
+            &_input {
+                margin-top: 4.13vw;
+                width: 89.33vw;
+                height: 10.67vw;
+                border: .13vw solid #b7b7b7;
+                padding-left: 18vw;
+            }
+
+            &_86 {
+                position: absolute;
+                top: 0;
+                left: 2.93vw;
+            }
+        }
+
+        &_number {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4.93vw;
+
+            &_code {
+                width: 60.93vw;
+                height: 10.67vw;
+                border: .13vw solid #b7b7b7;
+                padding-left: 2.8vw;
+            }
+
+            &_submit {
+                width: 24.6vw;
+                height: 10.67vw;
+                border: .13vw solid #b7b7b7;
+                text-align: center;
+                line-height: 10.67vw;
+                font-size: 3.73vw;
+            }
+        }
+
+        &_submit {
+            margin-top: 7.73vw;
+            width: 89.33vw;
+            height: 14.13vw;
+            background-color: #c55a5c;
+            border-radius: 1.33vw;
+            text-align: center;
+            line-height: 14.13vw;
+            font-size: 3.73vw;
+            font-weight: bold;
+            color: #ffffff;
+            border: none;
+        }
+    }
+
+    &_rest {
+        margin-top: 12.73vw;
+        font-size: 2.67vw;
+        color: #999999;
+    }
+}

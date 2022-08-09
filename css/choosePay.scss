@@ -1,0 +1,64 @@
+.root {
+    background-color: #f4f4f4;
+
+    .topbar {
+        position: relative;
+        padding-top: 8.93vw;
+        padding-bottom: 3.47vw;
+        width: 100%;
+        text-align: center;
+        font-size: 4.8vw;
+        font-weight: 100;
+        color: #333333;
+        border-bottom: .13vw solid #b7b7b7;
+        background-color: #fafafa;
+
+        img {
+            position: absolute;
+            bottom: 3.6vw;
+            left: 2.8vw;
+            width: 3.67vw;
+        }
+    }
+
+    .content {
+        padding: 0 2.67vw;
+        margin-top: 2.67vw;
+        font-size: 3.73vw;
+        font-weight: 500;
+        color: #777777;
+        background-color: #fff;
+
+        div {
+            display: flex;
+            align-items: center;
+            height: 14.67vw;
+            border-bottom: .13vw solid #cecece;
+
+            .checked {
+                img {
+                    width: 4.8vw;
+                }
+            }
+
+            .icon {
+                margin: 0 5.33vw 0 4.27vw;
+                width: 5.33vw;
+            }
+        }
+
+        .submit {
+            position: absolute;
+            bottom: 22.8vw;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 0;
+            width: 94.4vw;
+            height: 13.07vw;
+            background-color: #c55a5c;
+            border-radius: 1.33vw;
+            font-size: 4.27vw;
+            color: #ffffff;
+        }
+    }
+}

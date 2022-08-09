@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- initial-scale=1.0是确保页面1:1展现，不会出现缩放 -->
+    <!-- user-scalable=no在移动端禁止浏览器缩放，和maximum-scale=1.0一起使用 -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/register.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="root">
+        <div class="logo">
+            <img src="../images/login/Login_03.jpg" alt="">
+        </div>
+        <div class="formData">
+            <form action="#">
+                <label><input type="text" class="formData_account" placeholder="请输入用户名"></label>
+                <div class="formData_gender">
+                    <span>性别:</span>
+                    <input class="formData_gender_boy" type="radio" name="sex" value="1" title="男">
+                    <span>男</span>
+                    <input class="formData_gender_girl" type="radio" name="sex" value="0" title="女">
+                    <span>女</span>
+                </div>
+                <label><input type="text" class="formData_password" placeholder="密码"></label>
+                <label><input type="text" class="formData_repeat" placeholder="请再次输入密码"></label>
+                <label class="formData_phone">
+                    <input type="text" class="formData_phone_input" placeholder="手机号码">
+                    <span class="formData_phone_86">+86▼</span>
+                </label>
+                <div class="formData_number">
+                    <label><input type="text" class="formData_number_code" placeholder="验证码"></label>
+                    <button class="formData_number_submit">发送验证码</button>
+                </div>
+                <button class="formData_submit">注册</button>
+            </form>
+        </div>
+        <div class="root_rest">注册即代表同意《本家网络服务协议》</div>
+    </div>
+</body>
+
+</html>

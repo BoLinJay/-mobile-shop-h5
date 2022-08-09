@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- initial-scale=1.0是确保页面1:1展现，不会出现缩放 -->
+    <!-- user-scalable=no在移动端禁止浏览器缩放，和maximum-scale=1.0一起使用 -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/appendaddress.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="root">
+        <div class="topbar">
+            <img src="../images/icon/elf_39.png" alt="">
+            添加地址
+        </div>
+        <div class="content">
+            <form action="#">
+                <label class="consignee component">
+                    <span class="title">收货人：</span>
+                    <input type="text" class="input" placeholder="请输入收货人姓名">
+                </label>
+                <label class="phone component">
+                    <span class="title">手机号码：</span>
+                    <input type="text" class="input" placeholder="请输入收货人手机号">
+                </label>
+                <div class="address option">
+                    <span class="title">所在地区：</span>
+                    <div class="select">
+                        <select name="dart" id="dart" class="dart">
+                            <option value="山东省">山东省</option>
+                            <option value="山东省">山东省</option>
+                            <option value="山东省">山东省</option>
+                        </select>
+                        <select name="city" id="city" class="city">
+                            <option value="山东省">山东省</option>
+                            <option value="山东省">山东省</option>
+                            <option value="山东省">山东省</option>
+                        </select>
+                        <select name="area" id="area" class="area">
+                            <option value="山东省">山东省</option>
+                            <option value="山东省">山东省</option>
+                            <option value="山东省">山东省</option>
+                        </select>
+                        <select name="path" id="path" class="path">
+                            <option value="山东省">山东省</option>
+                            <option value="山东省">山东省</option>
+                            <option value="山东省">山东省</option>
+                        </select>
+                    </div>
+                </div>
+                <label class="minute">
+                    <span class="title">详细地址：</span>
+                    <textarea type="text" class="input textarea" placeholder="门牌、楼层等"></textarea>
+                </label>
+                <label class="mail component">
+                    <span class="title">邮政编码：</span>
+                    <input type="text" class="input" placeholder="请输入邮政编码">
+                </label>
+                <label class="default component">
+                    <span class="title">默认地址：</span>
+                    <input type="text" class="input">
+                    <img src="../images/icon/elf_14.png" alt="" class="choose">
+                </label>
+            </form>
+        </div>
+        <button class="submit">保存修改</button>
+    </div>
+</body>
+
+</html>

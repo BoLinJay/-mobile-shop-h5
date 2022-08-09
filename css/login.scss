@@ -1,0 +1,119 @@
+.root {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .logo {
+        margin-top: 22.27vw;
+        width: 100%;
+        text-align: center;
+
+        img {
+            width: 16vw;
+            height: 16.67vw;
+        }
+    }
+
+    .formData {
+        margin-top: 26.13vw;
+        text-align: center;
+
+        .account,
+        .password {
+            padding-left: 2.8vw;
+            width: 89.33vw;
+            height: 10.67vw;
+            border: .13vw solid #b7b7b7;
+            font-size: 3.73vw;
+            color: #777777
+        }
+
+        .password {
+            margin-top: 4.8vw;
+        }
+
+        .submit {
+            margin-top: 7.73vw;
+            width: 89.33vw;
+            height: 14.13vw;
+            background-color: #c55a5c;
+            border-radius: 1.33vw;
+            text-align: center;
+            line-height: 14.13vw;
+            font-size: 3.73vw;
+            font-weight: bold;
+            color: #ffffff;
+            border: none;
+        }
+    }
+
+    //忘记密码和 注册
+    .forget_register {
+        display: flex;
+        justify-content: space-between;
+        width: 89.33vw;
+        margin-top: 5.2vw;
+
+        a {
+            font-size: 3.73vw;
+            color: #aaaaaa;
+        }
+    }
+
+    // 其他方式
+    .rest {
+        display: flex;
+        align-items: center;
+        margin-top: 12.4vw;
+
+        span {
+            &:nth-child(2n-1) {
+                display: inline-block;
+                width: 29.6vw;
+                height: .13vw;
+                background-color: #d8d8d8;
+            }
+
+            &:nth-child(2) {
+                margin: 0 4vw;
+                font-size: 3.73vw;
+                color: #555555;
+            }
+        }
+    }
+
+    .icon {
+        margin-top: 7.73vw;
+
+        .icon_main {
+            a {
+                display: inline-block;
+
+                div {
+                    font-size: 3vw;
+                    color: #555555;
+                }
+            }
+
+            .icon_wx {
+                img {
+                    width: 6vw;
+                }
+            }
+
+            .icon_qq {
+                img {
+                    width: 5.33vw;
+                }
+
+                margin: 0 16.27vw;
+            }
+
+            .icon_wb {
+                img {
+                    width: 6.4vw;
+                }
+            }
+        }
+    }
+}
