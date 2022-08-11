@@ -5,9 +5,9 @@
 * @param {Function} done  请求完成过后需要做的事情（委托/回调）
 
 */
-export default function www(method, url, params) {
+export default function www(url, method, params) {
   return new Promise((resolve, reject) => {
-    URL = "http://localhost:3002" + url;
+    baseURL = "http://localhost:3002" + url;
     // 统一转换为大写便于后续判断
     method = method.toUpperCase();
     // 对象形式的参数转换为 urlencoded 格式
@@ -21,10 +21,10 @@ export default function www(method, url, params) {
 
     // 如果是 GET 请求就设置 URL 地址 问号参数
     if (method === "GET") {
-      URL += "?" + querystring;
+      baseURL += "?" + querystring;
     }
 
-    xhr.open(method, URL);
+    xhr.open(method, baseURL);
     // 如果是 POST 请求就设置请求体
     var data = null;
     if (method === "POST") {

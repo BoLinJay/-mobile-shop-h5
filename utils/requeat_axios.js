@@ -5,7 +5,7 @@ let instance = axios.create({
   timeout: 5000,
 });
 // 请求拦截器
-instance.interceptors.requesst.use((config) => {
+instance.interceptors.request.use((config) => {
   console.log(config);
 });
 // 响应拦截器

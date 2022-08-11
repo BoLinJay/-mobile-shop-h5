@@ -5,7 +5,7 @@ import www from "../utils/request_ajax.js";
  * @returns
  */
 export const login = (params) => {
-  return www("post", "/user/login", params);
+  return www("/user/login", "post", params);
 };
 /**
  * 获取商品列表
