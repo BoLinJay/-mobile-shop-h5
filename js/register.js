@@ -1,4 +1,4 @@
-import validation from "./validation.js";
+import validation from "../until/validation.js";
 let d = document;
 let userName = d.querySelector(".formData_account");
 let password = d.querySelector(".formData_password");

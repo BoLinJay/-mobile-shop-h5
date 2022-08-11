@@ -21,7 +21,7 @@ export default function validation(target, methods) {
     }
     passwordValue = target.value;
   }
-  // 重复密码
+  // 确认密码
   if (methods === "repeat") {
     repeatValue = target.value;
     if (repeatValue !== passwordValue) {
