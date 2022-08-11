@@ -12,6 +12,7 @@ export default function validation(target, methods) {
     if (!userNameValid) {
       target.style.borderColor = "red";
     }
+    return userNameValid;
   }
   // 密码
   if (methods === "password") {
@@ -20,13 +21,16 @@ export default function validation(target, methods) {
       target.style.borderColor = "red";
     }
     passwordValue = target.value;
+    return passwordValid;
   }
   // 确认密码
   if (methods === "repeat") {
     repeatValue = target.value;
-    if (repeatValue !== passwordValue) {
+    let repeatValid = repeatValue === passwordValue;
+    if (!repeatValid) {
       target.style.borderColor = "red";
     }
+    return repeatValid;
   }
   // 手机号
   if (methods === "phone") {
@@ -34,5 +38,6 @@ export default function validation(target, methods) {
     if (!phoneValid) {
       target.style.borderColor = "red";
     }
+    return phoneValid;
   }
 }

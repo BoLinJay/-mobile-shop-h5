@@ -99,6 +99,8 @@
             height: 24.00vw;
 
             img {
+                width: auto;
+                height: 100%;
                 margin-right: 3.47vw;
             }
 
@@ -106,6 +108,7 @@
                 width: 63.00vw;
 
                 .title {
+                    height: 9vw;
                     display: -webkit-box; //需要显示时文本行数
                     -webkit-box-orient: vertical; //需要显示时文本行数
                     -webkit-line-clamp: 2; //需要显示时文本行数
@@ -116,6 +119,7 @@
                 }
 
                 .text {
+                    height: 4vw;
                     overflow: hidden;
                     white-space: nowrap; //单行文本显示
                     text-overflow: ellipsis;

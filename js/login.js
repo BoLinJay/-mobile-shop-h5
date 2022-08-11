@@ -8,20 +8,23 @@ let username = oUsername.value,
   password = oPassword.value;
 // 账号验证
 oUsername.addEventListener("keyup", () => {
-  validation(oUsername, "username");
+  oUsername.isValid = validation(oUsername, "username");
 });
 // 密码验证
 oPassword.addEventListener("keyup", () => {
-  validation(oPassword, "password");
+  oPassword.isValid = validation(oPassword, "password");
 });
 // 登录按钮
+
 oSubmit.addEventListener("click", () => {
   //   表单验证
-  validation(oUsername, "username");
-  validation(oPassword, "password");
-  // console.log(login({ username, password }));
+  let allValid = true;
+  allValid = oUsername.isValid && oPassword.isValid;
+  if (!allValid) {
+    alert("账号密码格式不正确");
+    return;
+  }
   login({ username, password }).then((res) => {
-    console.log(res);
-    // location.assign("../index.html");
+    location.assign("../views/searchresult.html");
   });
 });

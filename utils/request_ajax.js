@@ -17,12 +17,7 @@ export default function www(method, url, params) {
     }
 
     var querystring = pairs.join("&");
-    var xhr = window.XMLHttpRequest
-      ? new XMLHttpRequest()
-      : new ActiveXObject("Microsoft.XMLHTTP");
-    xhr.addEventListener("readystatechange", function () {
-      if (this.readyState !== 4) return;
-    });
+    var xhr = new XMLHttpRequest();
 
     // 如果是 GET 请求就设置 URL 地址 问号参数
     if (method === "GET") {
@@ -40,11 +35,16 @@ export default function www(method, url, params) {
     xhr.send(data);
     // 指定xhr状态变化事件处理函数
     // 执行回调函数
-    xhr.onreadystatechange = function () {
-      if (this.readyState === 4 && this.status === 200) {
+    xhr.addEventListener("readystatechange", () => {
+      if (xhr.readyState === 4 && xhr.status === 200) {
         // 返回的应该是一个对象，这样客户端更好渲染
         resolve(JSON.parse(xhr.responseText));
+        return;
       }
-    };
+      if (xhr.status !== 200) {
+        reject(new Error("错误"));
+        return;
+      }
+    });
   });
 }
