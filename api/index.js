@@ -29,3 +29,51 @@ export const register = (params) => {
 export const findAddress = () => {
   return www("/address/list", "get");
 };
+/**
+ * 获取省信息
+ * @returns
+ */
+export const findDart = () => {
+  return www("/pcct/province", "get");
+};
+/**
+ * 获取城市
+ * @param {*} id
+ * @returns
+ */
+export const findCity = (params) => {
+  return www("/pcct/city", "get", params);
+};
+/**
+ * 获取区列表
+ * @param {*} params
+ * @returns
+ */
+export const findCounty = (params) => {
+  return www("/pcct/county", "get", params);
+};
+/**
+ * 获取街道列表
+ * @param {*} params
+ * @returns
+ */
+export const findTown = (params) => {
+  return www("/pcct/town", "get", params);
+};
+/**
+ * 添加收货地址
+ * @param {} params
+ * name: "",
+  tel: "",
+  province_id: "",
+  city_id: "",
+  county_id: "",
+  town_id: "",
+  street: "",
+  code: "",
+  isDefault: "1",
+ * @returns
+ */
+export const addAddress = (params) => {
+  return www("/address/add", "post", params);
+};

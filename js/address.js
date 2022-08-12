@@ -6,8 +6,10 @@ let addAddress = d.querySelector(".add-button");
 window.onload = async () => {
   const { data } = await findAddress();
   console.log(data);
-  data.forEach((item) => {
-    let html = `<li>
+
+  data &&
+    data.forEach((item) => {
+      let html = `<li>
 			<div class="info">
 				<div class="top">
 					<span class="name">${item.name}</span>
@@ -22,8 +24,8 @@ window.onload = async () => {
 			<img class="remove" src="../img/address/remove.png" alt="">
 		</li>
       `;
-    addressList.insertAdjacentHTML("beforeend", html);
-  });
+      addressList.insertAdjacentHTML("beforeend", html);
+    });
   addAddress.addEventListener("click", () => {
     location.assign("../views/appendaddress.html");
   });

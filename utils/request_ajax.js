@@ -11,17 +11,19 @@ export default function www(url, method, params) {
     // 统一转换为大写便于后续判断
     method = method.toUpperCase();
     // 对象形式的参数转换为 urlencoded 格式
-    var pairs = [];
-    for (var key in params) {
+    let pairs = [];
+    let querystring = "";
+    for (let key in params) {
       pairs.push(key + "=" + params[key]);
     }
-
-    var querystring = pairs.join("&");
-    var xhr = new XMLHttpRequest();
+    querystring = pairs.join("&");
+    let xhr = new XMLHttpRequest();
 
     if (method === "GET") {
       // 如果是 GET 请求就设置 URL 地址 问号参数
-      baseURL += "?" + querystring;
+      if (querystring) {
+        baseURL += "?" + querystring;
+      }
     }
 
     xhr.open(method, baseURL);
@@ -33,7 +35,7 @@ export default function www(url, method, params) {
     }
 
     // 如果是 POST 请求就设置请求体
-    var data = null;
+    let data = null;
     if (method === "POST") {
       xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
       data = querystring;

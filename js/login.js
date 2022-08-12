@@ -32,8 +32,9 @@ oSubmit.addEventListener("click", () => {
   login(formData).then(
     (res) => {
       console.log(res);
-      if (!res.data) {
+      if (!res.status) {
         alert(res.msg);
+        return;
       }
       location.assign("../index.html");
     },

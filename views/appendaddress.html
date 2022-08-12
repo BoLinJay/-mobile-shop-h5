@@ -22,54 +22,50 @@
             <form action="#">
                 <label class="consignee component">
                     <span class="title">收货人：</span>
-                    <input type="text" class="input" placeholder="请输入收货人姓名">
+                    <input name="name" type="text" class="input" placeholder="请输入收货人姓名" id="name">
                 </label>
                 <label class="phone component">
                     <span class="title">手机号码：</span>
-                    <input type="text" class="input" placeholder="请输入收货人手机号">
+                    <input name="tel" type="text" class="input" placeholder="请输入收货人手机号" id="tel">
                 </label>
                 <div class="address option">
                     <span class="title">所在地区：</span>
                     <div class="select">
                         <select name="dart" id="dart" class="dart">
-                            <option value="山东省">山东省</option>
-                            <option value="山东省">山东省</option>
-                            <option value="山东省">山东省</option>
+                            <!-- 省列表 -->
                         </select>
                         <select name="city" id="city" class="city">
-                            <option value="山东省">山东省</option>
-                            <option value="山东省">山东省</option>
-                            <option value="山东省">山东省</option>
+                            <!-- 市列表 -->
+                            <option>北京市</option>
                         </select>
-                        <select name="area" id="area" class="area">
-                            <option value="山东省">山东省</option>
-                            <option value="山东省">山东省</option>
-                            <option value="山东省">山东省</option>
+                        <select name="county" id="county" class="area">
+                            <!-- 区列表 -->
+                            <option>北京市</option>
                         </select>
-                        <select name="path" id="path" class="path">
-                            <option value="山东省">山东省</option>
-                            <option value="山东省">山东省</option>
-                            <option value="山东省">山东省</option>
+                        <select name="town" id="town" class="path">
+                            <!-- 镇列表 -->
+                            <option>北京市</option>
                         </select>
                     </div>
                 </div>
                 <label class="minute">
                     <span class="title">详细地址：</span>
-                    <textarea type="text" class="input textarea" placeholder="门牌、楼层等"></textarea>
+                    <textarea name="street" type="text" class="input textarea" placeholder="门牌、楼层等"
+                        id="street"></textarea>
                 </label>
                 <label class="mail component">
                     <span class="title">邮政编码：</span>
-                    <input type="text" class="input" placeholder="请输入邮政编码">
+                    <input name="code" type="text" class="input" placeholder="请输入邮政编码" id="code">
                 </label>
                 <label class="default component">
                     <span class="title">默认地址：</span>
-                    <input type="text" class="input">
-                    <img src="../images/icon/elf_14.png" alt="" class="choose">
+                    <input type="checkbox" class="choose" id="checkbox" checked='1'>
                 </label>
             </form>
         </div>
-        <button class="submit">保存修改</button>
+        <button class="submit">添加地址</button>
     </div>
+    <script type="module" src="../js/appendaddress.js"></script>
 </body>
 
 </html>
