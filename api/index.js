@@ -14,3 +14,11 @@ export const login = (params) => {
 export const getGoodList = (parpms) => {
   return www("/goods/list", "get", parpms);
 };
+/**
+ *注册接口
+ * @param {*} params
+ * @returns
+ */
+export const register = (params) => {
+  return www("/user/register", "post", params);
+};

@@ -7,7 +7,7 @@
 */
 export default function www(url, method, params) {
   return new Promise((resolve, reject) => {
-    baseURL = "http://localhost:3002" + url;
+    let baseURL = "http://localhost:3002" + url;
     // 统一转换为大写便于后续判断
     method = method.toUpperCase();
     // 对象形式的参数转换为 urlencoded 格式
@@ -19,12 +19,19 @@ export default function www(url, method, params) {
     var querystring = pairs.join("&");
     var xhr = new XMLHttpRequest();
 
-    // 如果是 GET 请求就设置 URL 地址 问号参数
     if (method === "GET") {
+      // 如果是 GET 请求就设置 URL 地址 问号参数
       baseURL += "?" + querystring;
     }
 
     xhr.open(method, baseURL);
+    // 判断是否有token，并携带token
+    //! 注意：setRequestHeader必须放在open后面
+    let token = window.sessionStorage.getItem("APP_token");
+    if (token) {
+      xhr.setRequestHeader("Authorization", `Bearer ${token}`);
+    }
+
     // 如果是 POST 请求就设置请求体
     var data = null;
     if (method === "POST") {
@@ -38,6 +45,13 @@ export default function www(url, method, params) {
     xhr.addEventListener("readystatechange", () => {
       if (xhr.readyState === 4 && xhr.status === 200) {
         // 返回的应该是一个对象，这样客户端更好渲染
+        let result = JSON.parse(xhr.responseText);
+        // console.log(JSON.parse(xhr.responseText));
+        // 判断是否有token存储token到本地
+        if (result.data && result.data.token) {
+          // console.log(result.data.token);
+          window.sessionStorage.setItem("APP_token", result.data.token);
+        }
         resolve(JSON.parse(xhr.responseText));
         return;
       }
