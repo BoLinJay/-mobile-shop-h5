@@ -71,7 +71,7 @@ submit.addEventListener("click", async () => {
       alert("该车主账号已存在");
       return;
     }
-    location.assign("../views/searchresult.html");
+    location.assign("../index.html");
   } catch (error) {
     throw new Error(error);
   }

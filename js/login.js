@@ -35,7 +35,7 @@ oSubmit.addEventListener("click", () => {
       if (!res.data) {
         alert(res.msg);
       }
-      location.assign("../views/searchresult.html");
+      location.assign("../index.html");
     },
     (e) => {
       throw new Error(e);

@@ -22,3 +22,10 @@ export const getGoodList = (parpms) => {
 export const register = (params) => {
   return www("/user/register", "post", params);
 };
+/**
+ * 收货地址
+ * @returns
+ */
+export const findAddress = () => {
+  return www("/address/list", "get");
+};
