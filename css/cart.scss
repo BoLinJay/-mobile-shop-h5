@@ -76,11 +76,12 @@
                 }
 
                 .number {
+                    width: 60vw;
                     display: flex;
                     align-items: flex-end;
+                    justify-content: space-between;
 
                     .option {
-                        margin-left: 13.6vw;
                         display: flex;
 
                         .minus,
@@ -180,15 +181,21 @@
                 width: 4.13vw;
             }
 
-            .textall {
-                margin-left: 4.8vw;
-                color: #999999;
+            .pirceBox {
+                width: 60.33vw;
+                display: flex;
+                justify-content: space-between;
+
+                .textall {
+                    margin-left: 3.33vw;
+                    color: #999999;
+                }
+
+                .money {
+                    color: #c55a5c;
+                }
             }
 
-            .money {
-                margin-left: 32.13vw;
-                color: #c55a5c;
-            }
 
             .button {
                 margin-left: 2.67vw;
@@ -233,8 +240,6 @@
     }
 
     .goup {
-        display: flex;
-        align-items: center;
         position: fixed;
         bottom: 30.40vw;
         right: 5vw;
@@ -244,6 +249,8 @@
         border-radius: 50%;
         border: 1px solid #eeeeee;
         background-color: #fff;
+        transition: all 1s;
+        padding-top: 2.33vw;
 
         img {
             width: 100%;
