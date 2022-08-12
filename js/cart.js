@@ -3,9 +3,14 @@ let checkboxAll = d.querySelectorAll(".checkbox");
 let ischeckedAll = d.querySelector(".allcheck");
 let lis = d.querySelectorAll(".cart li");
 let oPirceSum = d.querySelector("#pirceSum");
+let oGoBack = d.querySelector("#goBack");
 // 总金额
 let pirceSum = 0;
 window.onload = () => {
+  // 后退
+  oGoBack.addEventListener("click", () => {
+    history.go(-1);
+  });
   // 全选按钮
   ischeckedAll.addEventListener("click", () => {
     checkboxAll.forEach((item) => {
@@ -118,7 +123,6 @@ window.onscroll = () => {
   scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
   // 如果被卷进去的内容高度大于 50，显示返回顶部的按钮；
   // 如果被卷进去的内容高度小于 50，隐藏返回顶部的按钮。
-  console.log(scrollTop);
   scrollTop > 50
     ? (goTopBtn.style.display = "block")
     : (goTopBtn.style.display = "none");

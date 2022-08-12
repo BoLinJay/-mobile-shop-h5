@@ -63,17 +63,15 @@ export const findTown = (params) => {
 /**
  * 添加收货地址
  * @param {} params
- * name: "",
-  tel: "",
-  province_id: "",
-  city_id: "",
-  county_id: "",
-  town_id: "",
-  street: "",
-  code: "",
-  isDefault: "1",
  * @returns
  */
 export const addAddress = (params) => {
   return www("/address/add", "post", params);
+};
+/**
+ * 获取用户籽料
+ * @returns
+ */
+export const findUserInfo = () => {
+  return www("/user/info", "get");
 };
