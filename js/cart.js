@@ -4,6 +4,7 @@ let ischeckedAll = d.querySelector(".allcheck");
 let lis = d.querySelectorAll(".cart li");
 let oPirceSum = d.querySelector("#pirceSum");
 let oGoBack = d.querySelector("#goBack");
+let oCart = d.querySelector(".cart");
 // 总金额
 let pirceSum = 0;
 window.onload = () => {
@@ -22,61 +23,61 @@ window.onload = () => {
     oPirceSum.innerText = pirceSum.toFixed(2);
   });
   // 事件委托
-  lis.forEach((item) => {
-    item.addEventListener("click", function (e) {
-      let id = e.target.id;
-      // 当前数量input
-      let this_countNum = this.querySelector(".main");
-      // 当前价格
-      let this_pirce = this.querySelector("#pirce");
-      // 当前单选框
-      let this_checkbox = this.querySelector("#checkbox");
-      // input数量框
-      if (id === "num") {
+  oCart.addEventListener("click", (e) => {
+    let id = e.target.id;
+    // 选中的li
+    let this_li = e.target.closest("li");
+    // 选中的数量input
+    let this_countNum = this_li.querySelector(".main");
+    // 选中的价格
+    let this_pirce = this_li.querySelector("#pirce");
+    // 选中的单选框
+    let this_checkbox = this_li.querySelector("#checkbox");
+    // input数量框
+    if (id === "num") {
+      // 判断是否选中
+      if (this_checkbox.checked) {
+        // input失去焦点
+        this_countNum.addEventListener("blur", () => {
+          pirceSum += this_countNum.value * this_pirce.innerText;
+        });
+      }
+    }
+    // 单选框
+    if (id === "checkbox") {
+      //  是否全选
+      isAllChecked();
+      //   计算总金额
+      pirceSum = componentPirceSum();
+    }
+    // 删除
+    if (id === "delete") {
+      this_li.remove(this_li);
+      // 重新获取lis
+      lis = d.querySelectorAll(".cart li");
+    }
+    // 数量减
+    if (id === "minus") {
+      if (this_countNum.value > 1) {
+        this_countNum.value--;
         // 判断是否选中
         if (this_checkbox.checked) {
-          // input失去焦点
-          this_countNum.addEventListener("blur", () => {
-            pirceSum += this_countNum.value * this_pirce.innerText;
-          });
+          //   总金额减-1
+          pirceSum -= parseFloat(this_pirce.innerText);
         }
       }
-      // 单选框
-      if (id === "checkbox") {
-        //  是否全选
-        isAllChecked();
-        //   计算总金额
-        pirceSum = componentPirceSum();
+    }
+    // 数量加
+    if (id === "add") {
+      this_countNum.value++;
+      // 判断是否选中
+      if (this_checkbox.checked) {
+        // 总金额+1
+        pirceSum += parseFloat(this_pirce.innerText);
       }
-      // 删除
-      if (id === "delete") {
-        this.remove(this);
-        // 重新获取lis
-        lis = d.querySelectorAll(".cart li");
-      }
-      // 数量减
-      if (id === "minus") {
-        if (this_countNum.value > 1) {
-          this_countNum.value--;
-          // 判断是否选中
-          if (this_checkbox.checked) {
-            //   总金额减-1
-            pirceSum -= parseFloat(this_pirce.innerText);
-          }
-        }
-      }
-      // 数量加
-      if (id === "add") {
-        this_countNum.value++;
-        // 判断是否选中
-        if (this_checkbox.checked) {
-          // 总金额+1
-          pirceSum += parseFloat(this_pirce.innerText);
-        }
-      }
-      //   渲染
-      oPirceSum.innerText = pirceSum.toFixed(2);
-    });
+    }
+    //   渲染
+    oPirceSum.innerText = pirceSum.toFixed(2);
   });
 };
 
@@ -85,8 +86,8 @@ const componentPirceSum = () => {
   const arr = [];
   //   选出选中的商品
   lis.forEach((item) => {
-    let isChecked = item.querySelector("#checkbox").checked;
-    if (isChecked) {
+    let isCheckedTrue = item.querySelector("#checkbox").checked;
+    if (isCheckedTrue) {
       let item_pirce = item.querySelector("#pirce").innerText;
       let item_num = item.querySelector("#num").value;
       let count = item_pirce * item_num;
@@ -94,7 +95,7 @@ const componentPirceSum = () => {
       arr.push(count);
     }
   });
-  //   数组累加
+  //   数组累加，计算所有商品的总金额
   return arr.reduce((start, end) => {
     return start + end;
   }, 0);
@@ -113,7 +114,7 @@ const isAllChecked = () => {
   ischeckedAll.checked = isCheckedAll;
 };
 
-// 获取按钮
+// 获取goTop按钮
 let goTopBtn = d.getElementById("goTop");
 // 初始时，被浏览器卷进去的上部内容高度为 0
 let scrollTop = 0;
