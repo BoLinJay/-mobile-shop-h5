@@ -1,0 +1,109 @@
+.head {
+	height: 11.8vw;
+	border-bottom: 0.13vw solid #cecece;
+	position: relative;
+}
+
+.search {
+	box-sizing: border-box;
+	margin: 1.6vw 4vw;
+	width: 92vw;
+	height: 8.6vw;
+	background-color: #ededed;
+	border-radius: 1.33vw;
+	font-size: 3.73vw;
+	color: #999999;
+	padding-left: 25vw;
+	outline: none;
+	border: 0;
+}
+
+.head .fa-search {
+	position: absolute;
+	left: 25vw;
+	top: 4.2vw;
+	font-size: 3.73vw;
+	color: #999999;
+}
+
+.body {
+	display: flex;
+
+}
+.classification{
+	border-right: 0.13vw solid #cecece;
+	min-height: 88.2vh;
+}
+.classification li {
+	width: 21.73vw;
+	box-sizing: border-box;
+	padding: 0 7.0vw;
+	padding-top: 8.53vw;
+	
+}
+.classification li a{
+	font-size: 3.47vw;
+	color: #555555;
+}
+.content {
+	width: 78.27vw;
+	box-sizing: border-box;
+}
+
+.big-photo {
+	width: 70.4vw;
+	height: 25.6vw;
+
+	margin: 3.73vw;
+	border-radius: 1.33vw;
+}
+.title{
+	font-size: 3.47vw;
+	color: #555555;
+	text-align: center;
+	padding: 1vw 0;
+}
+.classification-content{
+	display: flex;
+	flex-wrap: wrap;
+}
+.classification-content li{
+	text-align: center;
+	width: 33.33%;
+	box-sizing: border-box;
+	margin-top: 5vw;
+	
+}
+.classification-content li a{
+	color: #777777;
+	font-size: 3.2vw;
+}
+.content-photo{
+	width: 14.8vw;
+}
+.content-name{
+	margin-top: 2.26vw;
+}
+
+.nav {
+	width: 100vw;
+	position: fixed;
+	height: 13.07vw;
+	background-color: #fbfbfb;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	justify-content: space-around;
+	border-top: 0.4vw solid #eaeaea;
+}
+
+.item-nav {
+	text-align: center;
+	margin-top: 3.4vw;
+	font-size: 3.73vw;
+	color: #555555;
+}
+
+.item-nav i {
+	font-size: 5vw;
+}

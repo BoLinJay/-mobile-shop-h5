@@ -1,11 +1,16 @@
 let d = document;
-let myPage = d.querySelector("#mypage");
-let myCart = d.querySelector("#mycart");
+let oMyPage = d.querySelector("#mypage");
+let oMyCart = d.querySelector("#mycart");
+let oCartgory = d.querySelector("#cartgory");
 // 我的
-myPage.addEventListener("click", () => {
+oMyPage.addEventListener("click", () => {
   location.assign("../views/mypage.html");
 });
 // 购物车
-myCart.addEventListener("click", () => {
+oMyCart.addEventListener("click", () => {
   location.assign("../views/cart.html");
+});
+// 分类
+oCartgory.addEventListener("click", () => {
+  location.assign("../views/classification.html");
 });

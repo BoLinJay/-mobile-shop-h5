@@ -75,3 +75,13 @@ export const addAddress = (params) => {
 export const findUserInfo = () => {
   return www("/user/info", "get");
 };
+/**
+ * 获取分类列表所有分类
+ * @returns
+ */
+export const findCateGory = () => {
+  return www("/category/all", "get");
+};
+export const findCartGorySub = (pid) => {
+  return www("/category/sub", "get", { pId: pid });
+};

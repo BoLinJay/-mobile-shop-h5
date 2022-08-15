@@ -96,9 +96,7 @@ const componentPirceSum = () => {
     }
   });
   //   数组累加，计算所有商品的总金额
-  return arr.reduce((start, end) => {
-    return start + end;
-  }, 0);
+  return arr.reduce((start, end) => start + end, 0);
 };
 // 是否全选
 const isAllChecked = () => {
