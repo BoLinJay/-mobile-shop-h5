@@ -14,10 +14,12 @@ window.onload = async () => {
 				<div class="top">
 					<span class="name">${item.name}</span>
 					<span class="tel">${item.tel}</span>
-					<div class="default">默认</div>
+					${item.isDefault ? '<div class="default">默认</div>' : ""} 
 				</div>
 				<div class="detail">
-					${item.province_name}${item.city_name}${item.county_name}${item.street}${item.town_name}
+					${item.province_name}${item.city_name}${item.county_name}${item.street}${
+        item.town_name
+      }
 				</div>
 			</div>
 			<img class="edit" src="../img/address/edit.png" alt="">

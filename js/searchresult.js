@@ -15,13 +15,13 @@ window.onload = () => {
     pageSize: 10,
     pageIndex: 1,
   };
-  // 搜索页面跳转过来的keyword
+  // 搜获取URL上的keyword
   let keyword = getParams("keyword");
   if (keyword) {
     params.keyword = keyword;
     oInput.value = keyword;
   }
-  // 搜索文本框
+  // 搜索文本框防抖
   let timer = 0;
   oInput.addEventListener("keyup", () => {
     let value = oInput.value;
@@ -33,7 +33,7 @@ window.onload = () => {
     timer = setTimeout(async () => {
       res = await getGoodList(params);
       console.log(res.data);
-      // render(res.data);
+      render(res.data);
       timer = 0;
     }, 500);
   });
@@ -45,20 +45,17 @@ window.onload = () => {
   oBtn.addEventListener("click", async () => {
     let value = oInput.value;
     let res = await getGoodList(params);
-    render();
+    render(res.data);
   });
 };
-// 渲染
+// 渲染DOM
 const render = (data) => {
   // 清空DOM
-  let nodes = content.children;
-  let arr = Array.prototype.slice.call(nodes, 0);
-  console.log(arr);
+  clearNodes();
   let innerHtml = "";
-
   data &&
     data.forEach((item) => {
-      let html = `<li>
+      let html = `<li id=${item.id}>
                 <img src=${item.img_md} alt="">
                 <div class="content_right">
                     <p class="title">${item.name}</p>
@@ -70,6 +67,19 @@ const render = (data) => {
       innerHtml += html;
     });
   content.insertAdjacentHTML("beforeend", innerHtml);
-  let lis = content.querySelectorAll("li");
-  console.log(lis);
 };
+// 清空DOM
+const clearNodes = () => {
+  let nodes = content.children;
+  // 转换数组
+  let arr = Array.from(nodes);
+  arr.forEach((item) => {
+    item.remove(item);
+  });
+};
+// 点击商品跳转商品详情
+content.addEventListener("click", (e) => {
+  console.log(e.target.closest("li").id);
+  let id = e.target.closest("li").id;
+  location.assign(`../views/commodity_particulars.html?id=${id}`);
+});

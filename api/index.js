@@ -85,3 +85,62 @@ export const findCateGory = () => {
 export const findCartGorySub = (pid) => {
   return www("/category/sub", "get", { pId: pid });
 };
+/**
+ * 获取商品详情
+ * @param {*} id
+ * @returns
+ */
+export const findGoodsDetail = (id) => {
+  return www("/goods/detail", "get", { id: id });
+};
+/**
+ *添加购物车
+ * @param {*} params
+ * gid Number 商品id
+ * num Number 商品数量
+ * @returns
+ */
+export const addCart = (params) => {
+  return www("/cart/add", "post", params);
+};
+/**
+ * 获取购物车列表
+ * @returns
+ */
+export const findCartList = () => {
+  return www("/cart/list", "get");
+};
+/**
+ *购物车商品数量减少
+ * @param {*} params
+ * @returns
+ */
+export const CartDecrease = (params) => {
+  return www("/cart/decrease", "post", params);
+};
+/**
+ * 购物车商品数量增加
+ * @param {*} params
+ * @id
+ * @num
+ * @returns
+ */
+export const CartIncrease = (params) => {
+  return www("/cart/increase", "post", params);
+};
+/**
+ * 确认订单数据
+ * @param {*} goods
+ * @returns
+ */
+export const orderSettle = (goods) => {
+  return www("/order/settle", "post", { goods: goods });
+};
+/**
+ *生成订单
+ * @param {*} params
+ * @returns
+ */
+export const orderCreate = (params) => {
+  return www("/order/create", "post", params);
+};

@@ -58,15 +58,23 @@
                 .text {
 
                     .title {
+                        width: 55vw;
                         font-size: 3.47vw;
                         color: #555555;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
                     }
 
                     .size {
+                        width: 55vw;
                         margin-top: 2.27vw;
                         font-size: 3.2vw;
                         color: #999999;
                         margin-bottom: 3.00vw;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
                     }
 
                     .money {
@@ -250,8 +258,9 @@
         border: 1px solid #eeeeee;
         background-color: #fff;
         padding-top: 2.33vw;
+        overflow: hidden;
 
-        img {
+        h img {
             width: 100%;
         }
     }

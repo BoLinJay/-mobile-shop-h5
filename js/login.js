@@ -1,5 +1,6 @@
 import validation from "../utils/validation.js";
 import { login } from "../api/index.js";
+import { getParams } from "../utils/mixins.js";
 let d = document;
 let oUsername = d.querySelector(".account");
 let oPassword = d.querySelector(".password");
@@ -20,7 +21,8 @@ oPassword.addEventListener("keyup", () => {
   formData.password = oPassword.value;
 });
 // 登录按钮
-
+let replace = getParams("replace");
+console.log(replace);
 oSubmit.addEventListener("click", () => {
   //   表单验证
   let allValid = true;
@@ -36,7 +38,11 @@ oSubmit.addEventListener("click", () => {
         alert(res.msg);
         return;
       }
-      location.assign("../index.html");
+      if (replace) {
+        location.replace(replace);
+      } else {
+        location.replace("../index.html");
+      }
     },
     (e) => {
       throw new Error(e);

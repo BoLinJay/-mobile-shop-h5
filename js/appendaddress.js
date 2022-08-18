@@ -28,7 +28,7 @@ let addressInfo = {
   town_id: "",
   street: "",
   code: "",
-  isDefault: "1",
+  isDefault: "0",
 };
 // 加载完毕
 window.onload = () => {
