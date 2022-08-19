@@ -28,6 +28,7 @@ window.onload = () => {
   oGoBack.addEventListener("click", () => {
     history.go(-1);
   });
+  ischeckedAll.checked = false; //全选按钮默认不选
   // 全选按钮
   ischeckedAll.addEventListener("click", () => {
     // 下单的商品
@@ -38,6 +39,8 @@ window.onload = () => {
       if (item.checked) {
         let id = item.closest("li").dataset.id;
         !goods.includes(id) && goods.push(id);
+      } else {
+        goods = [];
       }
     });
     console.log(goods);
@@ -154,7 +157,6 @@ const getCartList = async () => {
     innerHTMl += html;
   });
   oCart.innerHTML = innerHTMl;
-  console.log(res);
 };
 // 数量减少接口
 const numReduce = async (params) => {
@@ -163,7 +165,6 @@ const numReduce = async (params) => {
     // 更新购物车列表
     getCartList();
   }
-  console.log(res);
 };
 //数量增加接口
 const numIncrease = async (params) => {
@@ -172,7 +173,6 @@ const numIncrease = async (params) => {
     // 更新购物车列表
     getCartList();
   }
-  console.log(res);
 };
 // 计算总金额
 const componentPirceSum = () => {
@@ -204,10 +204,16 @@ const isAllChecked = () => {
     if (item.checked) {
       let id = +item.closest("li").dataset.id;
       !goods.includes(id) && goods.push(id);
+    } else {
+      // 取消勾选
+      let id = +item.closest("li").dataset.id;
+      let index = goods.indexOf(id);
+      index >= 0 && goods.splice(index, 1);
     }
   });
+  console.log(goods);
   orderSettle(goods).then((res) => {
-    console.log(res);
+    // console.log(res);
   });
   // 是否全选
   let isCheckedAll = checkedArray.every((item) => {

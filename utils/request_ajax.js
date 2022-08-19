@@ -23,7 +23,6 @@ export default function www(url, method, params) {
         });
       }
     }
-    console.log(pairs);
     querystring = pairs.join("&");
     let xhr = new XMLHttpRequest();
 

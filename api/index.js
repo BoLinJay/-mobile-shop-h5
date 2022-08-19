@@ -144,3 +144,11 @@ export const orderSettle = (goods) => {
 export const orderCreate = (params) => {
   return www("/order/create", "post", params);
 };
+/**
+ * 根据id获取地址详情
+ * @param {*} id
+ * @returns
+ */
+export const getAddressDetails = (id) => {
+  return www("/address", "get", { id: id });
+};

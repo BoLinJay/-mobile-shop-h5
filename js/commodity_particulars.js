@@ -9,6 +9,7 @@ window.onload = async () => {
   let oShoppingTrolley = d.querySelector(".shopping_trolley");
   let oGoBack = d.querySelector("#goBack");
   let oCart = d.querySelector("#cart");
+  let oSwiperImg = d.querySelector("#swiperImg");
   //   URL数据
   let id = getParams("id");
 
@@ -20,8 +21,7 @@ window.onload = async () => {
     //金额
     oPrice.innerText = `￥${res.data.price}`;
     // 图片
-    let html = res.data.detail;
-    oSwiper.innerHTML = html;
+    oSwiperImg.src = res.data.img_md;
   }
   //   立即购买
   oPurchase.addEventListener("click", () => {

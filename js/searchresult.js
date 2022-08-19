@@ -11,19 +11,24 @@ window.onload = () => {
     history.go(-1);
   });
   // 参数
-  let params = {
-    pageSize: 10,
-    pageIndex: 1,
-  };
-  // 搜获取URL上的keyword
+  let params = {};
+  // 获取URL上的keyword
   let keyword = getParams("keyword");
   if (keyword) {
     params.keyword = keyword;
     oInput.value = keyword;
   }
+  // 获取URL上的cate_id和cata_level
+  let cateId = getParams("cate_id");
+  let catePid = getParams("cate_level");
+  if (cateId && catePid) {
+    (params.cate_id = cateId), (params.cate_level = catePid);
+  }
   // 搜索文本框防抖
   let timer = 0;
   oInput.addEventListener("keyup", () => {
+    // 搜索前清空
+    params = {};
     let value = oInput.value;
     params.keyword = value;
     if (timer) {
@@ -43,7 +48,10 @@ window.onload = () => {
   });
   // 搜索按钮
   oBtn.addEventListener("click", async () => {
+    // 搜索前清空
+    params = {};
     let value = oInput.value;
+    params.keyword = value;
     let res = await getGoodList(params);
     render(res.data);
   });

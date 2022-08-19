@@ -1,4 +1,5 @@
 import { findAddress } from "../api/index.js";
+import { getParams } from "../utils/mixins.js";
 let d = document;
 let addressList = d.querySelector(".address-list");
 let addAddress = d.querySelector(".add-button");
@@ -9,7 +10,7 @@ window.onload = async () => {
 
   data &&
     data.forEach((item) => {
-      let html = `<li>
+      let html = `<li data-id=${item.id}>
 			<div class="info">
 				<div class="top">
 					<span class="name">${item.name}</span>
@@ -24,11 +25,19 @@ window.onload = async () => {
 			</div>
 			<img class="edit" src="../img/address/edit.png" alt="">
 			<img class="remove" src="../img/address/remove.png" alt="">
-		</li>
-      `;
+		</li>`;
+      //渲染
       addressList.insertAdjacentHTML("beforeend", html);
     });
   addAddress.addEventListener("click", () => {
     location.assign("../views/appendaddress.html");
+  });
+  addressList.addEventListener("click", (e) => {
+    // 点击商品详情有redirect值说明下单页面跳过来的
+    let addressId = e.target.closest("li").dataset.id;
+    if (getParams("redirect")) {
+      sessionStorage.setItem("addressID", addressId);
+      history.back();
+    }
   });
 };

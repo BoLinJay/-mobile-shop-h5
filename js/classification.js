@@ -15,6 +15,14 @@ window.onload = () => {
   getSunCartDefault();
   //   点击一级分类生成二级菜单
   clickOneCart();
+  // 商品点击跳转
+  oSubCart.addEventListener("click", (e) => {
+    let cateId = e.target.closest("li").dataset.id;
+    let cateLeavel = e.target.closest("li").dataset.pid;
+    location.assign(
+      `../views/searchresult.html?cate_id=${cateId}&cate_level=${cateLeavel}`
+    );
+  });
 };
 //   二级菜单默认渲染第一个
 const getSunCartDefault = async () => {
@@ -22,7 +30,7 @@ const getSunCartDefault = async () => {
   if (res.status) {
     let innerHTML = "";
     res.data.forEach((item) => {
-      let html = `<li>
+      let html = `<li data-id=${item.id} data-pid=${item.pId}>
 					<img class="content-photo" src=${item.img} alt="">
 					<div class="content-name">${item.name}</div>
 				</li>`;
@@ -46,10 +54,11 @@ const clickOneCart = () => {
     oBigImg.src = img;
 
     const res = await findCartGorySub(pId);
+    console.log(res);
     if (res.status) {
       let innerHTML = "";
       res.data.forEach((item) => {
-        let html = `<li>
+        let html = `<li data-id=${item.id} data-pid=${item.pId}>
 					<img class="content-photo" src=${item.img} alt="">
 					<div class="content-name">${item.name}</div>
 				</li>`;
@@ -63,6 +72,7 @@ const clickOneCart = () => {
 // 获取全部分类列表
 const getCartAll = async () => {
   const res = await findCateGory();
+  console.log(res);
   if (res.status) {
     const cartAll = res.data.filter((item) => {
       return item.pId === 1;
